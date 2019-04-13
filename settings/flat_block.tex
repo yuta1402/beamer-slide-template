@@ -1,0 +1,19 @@
+\usepackage{tcolorbox}
+
+\definecolor{Indigo}{HTML}{264348}
+
+\newenvironment{flatblock}[2]{
+    \begin{tcolorbox}[
+        adjusted title={#2},
+        grow to left by=5pt, grow to right by =5pt,
+        boxsep=1pt, left=4pt, right=4pt, top=4pt, bottom=4pt,
+        colback=#1!5!white,
+        % colframe=#1!75!black,
+        colframe=#1,
+        coltext=Indigo,
+        % sharp corners,
+        arc=0mm,
+    ]
+}{
+    \end{tcolorbox}
+}

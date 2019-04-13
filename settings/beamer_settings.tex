@@ -1,0 +1,73 @@
+\usepackage{appendixnumberbeamer}
+
+\usetheme{Madrid}
+
+% 箇条書きをシンプルにする
+\useinnertheme{circles}
+
+% ナビゲーションシンボルを消去
+\setbeamertemplate{navigation symbols}{}
+% フッターにスライド番号のみを表示
+\setbeamertemplate{footline}[frame number]
+
+% Color
+\definecolor{Gray}{HTML}{808080}
+\definecolor{LightGray}{HTML}{C0C0C0}
+\definecolor{DarkGray}{HTML}{303030}
+\definecolor{LapisLazuli}{HTML}{1F4788}
+\definecolor{Indigo}{HTML}{264348}
+\definecolor{Indigo}{HTML}{264348}
+
+% \setbeamercolor{title}{fg=DarkGray,bg=white}
+\setbeamercolor{title}{fg=LapisLazuli,bg=white}
+\setbeamercolor{frametitle}{fg=white,bg=LapisLazuli}
+\setbeamercolor{normal text}{fg=Indigo}
+\setbeamercolor{page number in head/foot}{fg=Indigo}
+
+% Font
+% 英文をサンセリフ体に
+\renewcommand{\familydefault}{\sfdefault}
+% 数式はサンセリフ体にしない
+\usefonttheme{professionalfonts}
+% 日本語をゴシック体に
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+% Title Page
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+
+\setbeamerfont{title}{size=\Large}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize}
+
+\setbeamertemplate{title page}{
+    \vspace{2.5em}
+    {\usebeamerfont{title} \usebeamercolor[fg]{title} \inserttitle \par}
+    % {\usebeamerfont{subtitle} \usebeamercolor[fg]{subtitle} \inserttitle \par}
+    \vspace{1.5em}
+    \begin{flushleft}
+        \usebeamerfont{author} \insertauthor \par
+        \vspace{0.5em}
+        \usebeamerfont{institute} \insertinstitute \par
+        \vspace{3em}
+        \usebeamerfont{date} \insertdate \par
+        % \usebeamercolor[fg]{titlegraphic} \inserttitlegraphic
+    \end{flushleft}
+}
+
+% Frame
+% \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+
+
+% Block
+\input{settings/flat_block.tex}
+
+% Blockの影を消す
+\setbeamertemplate{blocks}[rounded]
+
+\definecolor{SiskinSproutYellow}{HTML}{7A942E}
+\definecolor{SteelBlue}{HTML}{4B77BE}
+\definecolor{ForeignCrimson}{HTML}{C91F37}
+
+\renewenvironment{block}[1]{\begin{flatblock}{SteelBlue}{#1}}{\end{flatblock}}
+\renewenvironment{alertblock}[1]{\begin{flatblock}{ForeignCrimson}{#1}}{\end{flatblock}}
+\renewenvironment{exampleblock}[1]{\begin{flatblock}{SiskinSproutYellow}{#1}}{\end{flatblock}}

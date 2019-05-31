@@ -1,16 +1,17 @@
 ROOTEX = main.tex
 TARGET = slide
 SRCS = $(shell find ./ -name "*.tex")
+CMD = env TEXINPUTS='.//;' latexmk
 
 all: $(TARGET)
 
 $(TARGET): $(SRCS)
-	latexmk -jobname=$@ $(ROOTEX)
+	$(CMD) -jobname=$@ $(ROOTEX)
 
 .PHONY: watch
 watch:
-	latexmk -pvc -jobname=$(TARGET) $(ROOTEX) -silent
+	$(CMD) -pvc -jobname=$(TARGET) $(ROOTEX) -silent
 
 .PHONY: clean
 clean:
-	latexmk -CA -jobname=$(TARGET) $(ROOTEX)
+	${CMD} -CA -jobname=$(TARGET) $(ROOTEX)

@@ -1,6 +1,7 @@
 # Beamer Slide Template
 ## Required
-- latexmk
+- docker
+- docker-compose
 
 ## Build
 ```

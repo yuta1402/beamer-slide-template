@@ -4,6 +4,7 @@ services:
     build: .
     image: make-latex-ja
     container_name: make-latex-ja
+    user: "${UID}:${GID}"
     tty: true
     working_dir: /workdir
     volumes:
